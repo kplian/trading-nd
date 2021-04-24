@@ -21,7 +21,7 @@ import {
 import { PxpEntity } from '../../../lib/pxp';
 
 
-@Entity({ name: 'discount' })
+@Entity({ name: 'ttr_discount' })
 
 export default class Discount  extends PxpEntity {
     @PrimaryGeneratedColumn({name:'discount_id'})
