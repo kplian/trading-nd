@@ -3,34 +3,35 @@
  *
  * MIT
  *
- * User Controller
+ * Label Controller
  *
- * @summary User Controller
- * @author Jaime Rivera
+ * @summary Account Status Type Controller
+ * @author 
  *
- * Created at     : 2020-09-17 18:55:38
- * Last modified  : 2020-09-17 19:04:30
+ * Created at     : 2021-04-24
+ * Last modified  :
  */
- import { EntityManager, } from 'typeorm';
- import { getManager } from 'typeorm';
+ import { EntityManager } from 'typeorm';
+
  import {
-   Controller,
-   Get,
-   Post,
-   Route,
-   StoredProcedure,
-   DbSettings,
-   ReadOnly,
-   Model,
-   __
+     Controller,
+     Get,
+     Post,
+     Put,
+     Delete,
+     Patch,
+     Route,
+     StoredProcedure,
+     DbSettings,
+     ReadOnly,
+     Authentication,
+     Permission,
+     Model, __, Log
  } from '../../../lib/pxp';
- import ChargeGatewayModel from '../entity/ChargeGateway';
- import VendorModel from '../entity/Vendor';
  
  
+ @Model('trading-nd/ChargeGateway')
  class ChargeGateway extends Controller {
-   
- 
  
  }
  
