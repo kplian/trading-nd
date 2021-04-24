@@ -17,6 +17,7 @@ import {
     PrimaryGeneratedColumn,
     Column,
     JoinColumn,
+    ManyToOne,
 } from 'typeorm';
 import Item from './Item';
 import { PxpEntity } from '../../../lib/pxp';
