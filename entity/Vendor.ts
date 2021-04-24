@@ -22,8 +22,6 @@ import {
 
 import { PxpEntity } from '../../../lib/pxp';
 import ChargeGateway from './ChargeGateway';
-
-
 @Entity({ name: 'ttr_vendor' })
 
 export default class Vendor extends PxpEntity {

@@ -19,7 +19,7 @@ import {
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
-import ItemTypeConfig from '../controllers/ItemTypeConfig';
+import ItemTypeConfig from './ItemTypeConfig';
 
 
 @Entity({ name: 'ttr_item_type' })

@@ -28,11 +28,8 @@ import {
     Permission,
     Model, __, Log
 } from '../../../lib/pxp';
-
-import ItemTypeConfig from '../entity/ItemTypeConfig';
-
 @Model('trading-nd/ItemTypeConfig')
-class ProductType extends Controller {
+class ItemTypeConfig extends Controller {
 
 }
 
