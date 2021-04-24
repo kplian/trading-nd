@@ -16,8 +16,9 @@ import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
+    JoinColumn,
 } from 'typeorm';
-
+import Item from './Item';
 import { PxpEntity } from '../../../lib/pxp';
 
 
@@ -38,5 +39,9 @@ export default class Discount  extends PxpEntity {
 
     @Column({ name: 'percentage', type: 'numeric', nullable: false })
     percentage: number;
+
+    @ManyToOne(() => Item, item => item.discounts)
+    @JoinColumn({ name: 'item_id' })
+    item: Item;
 
 }
