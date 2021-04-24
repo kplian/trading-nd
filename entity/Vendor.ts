@@ -21,6 +21,7 @@ import {
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
+import ChargeGateway from './ChargeGateway';
 
 
 @Entity({ name: 'ttr_vendor' })
@@ -38,11 +39,18 @@ export default class Vendor extends PxpEntity {
     @Column({ name: 'master_vendor_id', type: 'int', nullable: true })
     masterVendorId: string;
 
+<<<<<<< HEAD
     @OneToMany(() => Vendor, vendor => vendor.children)
     children: Vendor[];
 
     @ManyToOne(() => Vendor, vendor => vendor.parent)
     @JoinColumn({ name: 'master_vendor_id' })
     parent: Vendor;
+=======
+    @OneToMany(() => ChargeGateway, chargeGateway => chargeGateway.vendor)
+    chargeGateways: ChargeGateway[];
+
+    
+>>>>>>> da455090fa8df40d02687d827196e4fdfc707951
 
 }
