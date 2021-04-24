@@ -14,7 +14,10 @@
 import {
     Entity,
     PrimaryGeneratedColumn,
-    Column,OneToMany
+    Column,
+    OneToMany,
+    ManyToOne,
+    JoinColumn
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
@@ -35,10 +38,13 @@ export default class Vendor extends PxpEntity {
 
     @Column({ name: 'master_vendor_id', type: 'int', nullable: true })
     masterVendorId: string;
+    @OneToMany(() => Vendor, vendor => vendor.children)
+    children: Vendor[];
+
+    @ManyToOne(() => Vendor, vendor => vendor.parent)
+    @JoinColumn({ name: 'master_vendor_id' })
+    parent: Vendor;
 
     @OneToMany(() => ChargeGateway, chargeGateway => chargeGateway.vendor)
     chargeGateways: ChargeGateway[];
-
-    
-
 }

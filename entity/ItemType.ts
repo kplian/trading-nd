@@ -15,9 +15,11 @@ import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
+    OneToMany,
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
+import ItemTypeConfig from '../controllers/ItemTypeConfig';
 
 
 @Entity({ name: 'ttr_item_type' })
@@ -40,5 +42,11 @@ export default class ItemType extends PxpEntity {
 
     @Column({ name: 'groupable_yn', type: 'varchar', length: 1, nullable: true })
     groupableYN: string;
+
+    @OneToMany(() => ItemTypeConfig, itemTypeConfig => itemTypeConfig.itemType)
+    configs: ItemTypeConfig[];
+
+
+    
 
 }
