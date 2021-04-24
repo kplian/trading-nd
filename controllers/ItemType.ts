@@ -3,12 +3,12 @@
  *
  * MIT
  *
- * Label Controller
+ * Person Controller
  *
  * @summary Account Status Type Controller
- * @author Rensi Arteaga Copari
+ * @author Favio Figueroa
  *
- * Created at     : 2021-04-24
+ * Created at     : 2021-03-10 18:55:38
  * Last modified  :
  */
 import { EntityManager } from 'typeorm';
@@ -29,10 +29,11 @@ import {
     Model, __, Log
 } from '../../../lib/pxp';
 
+import ItemTypeModel from '../entity/ItemType';
 
-@Model('trading-nd/Label')
-class Label extends Controller {
+@Model('trading-nd/ItemType')
+class ItemType extends Controller {
 
 }
 
-export default Label;
+export default ItemType;

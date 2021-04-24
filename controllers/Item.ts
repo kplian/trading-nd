@@ -6,7 +6,7 @@
  * Label Controller
  *
  * @summary Account Status Type Controller
- * @author Rensi Arteaga Copari
+ * @author Isabel Vargas
  *
  * Created at     : 2021-04-24
  * Last modified  :
@@ -30,9 +30,9 @@ import {
 } from '../../../lib/pxp';
 
 
-@Model('trading-nd/Label')
-class Label extends Controller {
+@Model('trading-nd/Item')
+class Item extends Controller {
 
 }
 
-export default Label;
+export default Item;

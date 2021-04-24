@@ -3,12 +3,12 @@
  *
  * MIT
  *
- * Person Controller
+ * Vendor Controller
  *
- * @summary Account Status Type Controller
- * @author Favio Figueroa
+ * @summary Vendor Controller
+ * @author Rodrigo Chumacero
  *
- * Created at     : 2021-03-10 18:55:38
+ * Created at     : 2021-04-24
  * Last modified  :
  */
 import { EntityManager } from 'typeorm';
@@ -29,11 +29,11 @@ import {
     Model, __, Log
 } from '../../../lib/pxp';
 
-import ProductTypeModel from '../entity/ProductType';
+import VendorModel from '../entity/Vendor';
 
-@Model('trading-nd/ProductType')
-class ProductType extends Controller {
+@Model('trading-nd/Vendor')
+class Vendor extends Controller {
 
 }
 
-export default ProductType;
+export default Vendor;
