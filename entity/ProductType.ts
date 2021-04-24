@@ -11,23 +11,22 @@
  * Created at     : 2021-03-10 18:55:38
  * Last modified  :
  */
-import {
+ import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
-    OneToMany,
-} from 'typeorm';
-
-import { PxpEntity } from '../../../lib/pxp';
-import ItemTypeConfig from '../controllers/ItemTypeConfig';
-
-
-@Entity({ name: 'ttr_item_type' })
-
-export default class ItemType extends PxpEntity {
-    @PrimaryGeneratedColumn({name:'item_type_id'})
-    itemTypeId: number;
-
+  } from 'typeorm';
+  
+  import { PxpEntity } from '../../../lib/pxp';
+  
+  
+  @Entity({ name: 'ttr_product_type' })
+  
+  export default class ProductType extends PxpEntity {
+  
+    @PrimaryGeneratedColumn({name:'product_type_id'})
+    productTypeId: number;
+  
     @Column({ name: 'code', type: 'varchar', length: 50, nullable: true })
     code: string;
 
@@ -36,17 +35,12 @@ export default class ItemType extends PxpEntity {
 
     @Column({ name: 'description', type: 'varchar', length: 1000, nullable: true })
     description: string;
-
+  
     @Column({ name: 'have_stock_yn', type: 'varchar', length: 1, nullable: true })
     haveStockYN: string;
 
     @Column({ name: 'groupable_yn', type: 'varchar', length: 1, nullable: true })
     groupableYN: string;
-
-    @OneToMany(() => ItemTypeConfig, itemTypeConfig => itemTypeConfig.itemType)
-    configs: ItemTypeConfig[];
-
-
-    
-
-}
+  
+  }
+  
