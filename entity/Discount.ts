@@ -27,16 +27,16 @@ export default class Discount  extends PxpEntity {
     @PrimaryGeneratedColumn({name:'discount_id'})
     discountId: number;
 
-    @Column({ name: 'item_id', type: 'numeric', nullable: true })
+    @Column({ name: 'item_id', type: 'numeric', nullable: false })
     itemId: number;
 
-    @Column({ name: 'start_date', type: 'date', nullable: true })
+    @Column({ name: 'start_date', type: 'date', nullable: false })
     startDate: Date;
 
-    @Column({ name: 'end_date', type: 'date', nullable: true })
+    @Column({ name: 'end_date', type: 'date', nullable: false })
     endDate: Date;
 
-    @Column({ name: 'percentage', type: 'numeric', nullable: true })
+    @Column({ name: 'percentage', type: 'numeric', nullable: false })
     percentage: number;
 
 }
