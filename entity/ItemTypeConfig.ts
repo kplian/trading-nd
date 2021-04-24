@@ -15,9 +15,12 @@ import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
+    ManyToOne,
+    JoinColumn,
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
+import ItemType from './ItemType';
 
 
 @Entity({ name: 'ttr_item_type_config' })
@@ -37,5 +40,8 @@ export default class ItemTypeConfig extends PxpEntity {
 
     @Column({ name: 'default_table', type: 'varchar', length: 100, nullable: true })
     defaultTable: string;
-
+    
+    @ManyToOne(() => ItemType, itemType => itemType.configs)
+    @JoinColumn({ name: 'item_type_id' })
+    itemType: ItemType;
 }
