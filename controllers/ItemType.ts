@@ -29,11 +29,11 @@ import {
     Model, __, Log
 } from '../../../lib/pxp';
 
-import ProductTypeModel from '../entity/ProductType';
+import ItemTypeModel from '../entity/ItemType';
 
-@Model('trading-nd/ProductType')
-class ProductType extends Controller {
+@Model('trading-nd/ItemType')
+class ItemType extends Controller {
 
 }
 
-export default ProductType;
+export default ItemType;

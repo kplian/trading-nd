@@ -20,11 +20,11 @@ import {
 import { PxpEntity } from '../../../lib/pxp';
 
 
-@Entity({ name: 'ttr_product_type' })
+@Entity({ name: 'ttr_item_type' })
 
-export default class ProductType extends PxpEntity {
-    @PrimaryGeneratedColumn({name:'product_type_id'})
-    productTypeId: number;
+export default class ItemType extends PxpEntity {
+    @PrimaryGeneratedColumn({name:'item_type_id'})
+    itemTypeId: number;
 
     @Column({ name: 'code', type: 'varchar', length: 50, nullable: true })
     code: string;
