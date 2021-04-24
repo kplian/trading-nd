@@ -15,11 +15,14 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToMany
+  OneToMany,
+  ManyToMany,
+  JoinTable
 } from 'typeorm';
 
 import { PxpEntity } from '../../../lib/pxp';
 import Discount from './Discount';
+import Label from './Label';
 @Entity({ name: 'ttr_item' })
 
 
@@ -47,4 +50,18 @@ export default class Item extends PxpEntity {
 
   @OneToMany(() => Discount, discount => discount.item)
   discounts: Discount[];
+
+  @ManyToMany(() => Label)
+  @JoinTable({
+    name: 'ttr_item_label',
+    joinColumn: {
+      name: 'item_id',
+      referencedColumnName: 'itemId'
+    },
+    inverseJoinColumn: {
+      name: 'label_id',
+      referencedColumnName: 'labelId'
+    }
+  })
+  labels: Label[];
 }
