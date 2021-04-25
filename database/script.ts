@@ -60,7 +60,28 @@ scriptsArray.push({
 
   }
 
-});
+},
+    {
+      scriptCode: 'FFP-TR-20210424-001', scriptFunction: async (em) => {
+
+        const subsystem = await Subsystem.findOne({ code: 'TR' });
+        const uiTr = await Ui.findOne({ code: 'TR' });
+
+        const uiItemType = new Ui();
+        uiItemType.code = 'TR_ITEM_TYPE';
+        uiItemType.name = 'Item Type';
+        uiItemType.description = 'Item Type';
+        uiItemType.subsystem = subsystem as Subsystem;
+        uiItemType.parent = uiTr as Ui;
+        uiItemType.createdBy = 'admin';
+        uiItemType.route = 'TR_Item_Type';
+        await em.save(uiItemType);
+
+
+      }
+
+    }
+    );
 
 // ROOT MENU FOR EXAMPLES
 
