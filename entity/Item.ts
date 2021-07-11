@@ -23,12 +23,23 @@ export default class Item extends PxpEntity {
   itemId: number;
 
 
-  @Column({ name: 'type', type: 'varchar', length: 200, nullable: true })
-  type: string;
+  @Column({ name: 'code', type: 'varchar', length: 200, nullable: false })
+  code: string;
 
+  @Column({ name: 'name', type: 'varchar', length: 200, nullable: false })
+  name: string;
+
+  @Column({ name: 'description', type: 'varchar', length: 200, nullable: false })
+  description: string;
+
+  @Column({ name: 'cost', type: 'numeric', nullable: true })
+  cost: string;
 
   @Column({ name: 'price', type: 'numeric', nullable: true })
   price: string;
+
+  @Column({ name: 'type', type: 'varchar', length: 200, nullable: true })
+  type: string;
 
   @Column({ name: 'available_yn', type: 'varchar', length: 80, nullable: true })
   availableYN: string;
@@ -38,6 +49,10 @@ export default class Item extends PxpEntity {
 
   @Column({ name: 'unit', type: 'varchar', length: 15, nullable: true })
   unit: string;
+
+  @Column({ name: 'series_number_yn', type: 'varchar', length: 80, nullable: true })
+  seriesNumberYN: string;
+
 
   @OneToMany(() => Discount, discount => discount.item)
   discounts: Discount[];
