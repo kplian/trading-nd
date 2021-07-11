@@ -44,7 +44,7 @@ haveStockYN: string;
 groupableYN: string;
 
 @OneToMany(() => ItemTypeConfig, itemTypeConfig => itemTypeConfig.itemType)
-configs: ItemTypeConfig[];
+itemTypeConfig: ItemTypeConfig[];
 
 
 

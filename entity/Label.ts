@@ -16,11 +16,12 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToMany,
-  JoinTable
+  JoinTable, OneToMany
 } from 'typeorm';
 
 import { PxpEntity } from '@pxp-nd/entities';
 import Item from './Item';
+import ItemLabel from './ItemLabel';
 
 @Entity({ name: 'ttr_label' })
 
@@ -28,24 +29,20 @@ export default class Label extends PxpEntity {
   @PrimaryGeneratedColumn({ name: 'label_id' })
   labelId: number;
 
-  @Column({ name: 'code', type: 'varchar', length: 50, nullable: true })
-  code: string;
-
   @Column({ name: 'name', type: 'varchar', length: 100, nullable: true })
   name: string;
 
-  @ManyToMany(() => Item)
-  @JoinTable({
-    name: 'ttr_item_label',
-    joinColumn: {
-      name: 'label_id',
-      referencedColumnName: 'labelId'
-    },
-    inverseJoinColumn: {
-      name: 'item_id',
-      referencedColumnName: 'itemId'
-    }
-  })
-  labels: Label[];
+  @Column({ name: 'code', type: 'varchar', length: 50, nullable: true })
+  code: string;
+
+  @Column({ name: 'icon', type: 'varchar', length: 50, nullable: true })
+  icon: string;
+
+  @Column({ name: 'color', type: 'varchar', length: 50, nullable: true })
+  color: string;
+
+  @OneToMany(() => ItemLabel, itemLabel => itemLabel.label)
+  itemLabel: ItemLabel[];
+
 
 }
