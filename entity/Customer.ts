@@ -1,13 +1,13 @@
 import {
 	OneToMany,
-	JoinColumn,
+	JoinTable,
 	ManyToOne,
 	Entity,
 	PrimaryGeneratedColumn,
 	Column,
 	BaseEntity,
 } from 'typeorm';
-
+import ShoppingCart from './ShoppingCart';
 @Entity({ name: 'ttr_customer' })
 export default class Customer extends BaseEntity {
 
@@ -25,4 +25,8 @@ export default class Customer extends BaseEntity {
 
 	@Column({ type: 'varchar', length: 100 })
 	email: string;
+	
+	@OneToMany(() => ShoppingCart, shoppingCart => shoppingCart.customer)
+  	@JoinTable()
+  	shoppingCart: ShoppingCart[];
 }

@@ -16,7 +16,7 @@ import { PxpEntity } from '@pxp-nd/entities';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import Discount from './Discount';
 import Label from './Label';
-import ItemTypeConfig from './ItemTypeConfig';
+import CartDetail from './CartDetail';
 import ItemLabel from './ItemLabel';
 @Entity({ name: 'ttr_item' })
 export default class Item extends PxpEntity {
@@ -76,5 +76,9 @@ export default class Item extends PxpEntity {
 
   @OneToMany(() => ItemLabel, itemLabel => itemLabel.item)
   itemLabel: ItemLabel[];
+
+  @OneToMany(() => CartDetail, cartDetail => cartDetail.item)
+  @JoinTable()
+  cartDetails: CartDetail[];
 
 }
