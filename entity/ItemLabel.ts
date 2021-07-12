@@ -23,7 +23,7 @@ import { PxpEntity } from '@pxp-nd/entities';
 import Item from './Item';
 import Label from './Label';
 
-@Entity({ name: 'ttr_label' })
+@Entity({ name: 'ttr_item_label' })
 
 export default class ItemLabel extends PxpEntity {
   @PrimaryGeneratedColumn({ name: 'item_label_id' })

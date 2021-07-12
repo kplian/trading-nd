@@ -17,13 +17,13 @@ export default class CustomerPayMethod extends BaseEntity {
 	@Column({ name: 'customer_id', type: 'integer' })
 	customerId: number;
 
-	@Column({ type: 'character varying', length: 50 })
+	@Column({ type: 'varchar', length: 50 })
 	name: string;
 
-	@Column({ type: 'character varying', length: 300 })
+	@Column({ type: 'varchar', length: 300 })
 	token: string;
 
-	@Column({ name: 'credit_card_cumber', type: 'character varying', length: 100 })
+	@Column({ name: 'credit_card_cumber', type: 'varchar', length: 100 })
 	creditCardCumber: string;
 
 	@Column({ name: 'expiration_date', type: 'date' })

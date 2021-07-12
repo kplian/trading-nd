@@ -14,7 +14,7 @@ export default class CustomerType extends BaseEntity {
 	@PrimaryGeneratedColumn({ name: 'customer_type_id' })
 	customerTypeId: number;
 
-	@Column({ type: 'character varying', length: 50 })
+	@Column({ type: 'varchar', length: 50 })
 	name: string;
 
 	@Column({ name: 'discount_percentage', type: 'numeric' })
