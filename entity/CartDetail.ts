@@ -9,7 +9,7 @@
  * @author JRR
  *
  * Created at     : 2020-09-17 18:55:38
- * Last modified  : 2021-07-11 23:58:08
+ * Last modified  : 2021-07-12 00:14:36
  */
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import Item from './Item';
@@ -42,7 +42,7 @@ export default class CartDetail extends PxpEntity {
   item: Item;
 
   @ManyToOne(() => ShoppingCart, shoppingCart => shoppingCart.cartDetails)
-  @JoinColumn({ name: 'item_id' })
+  @JoinColumn({ name: 'shopping_cart_id' })
   shoppingCart: ShoppingCart;
 
 }
